@@ -10,13 +10,13 @@ require 'database_cleaner'
 ActiveRecord::Migration.maintain_test_schema!
 
 Shoulda::Matchers.configure do |config|
-  config.integrate do |withe|
+  config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
   end
 end
 
-RSpec.configure do |config|
+RSpec.configuration do |config|
 
   config.include FactoryGirl:Syntax::Methods
 

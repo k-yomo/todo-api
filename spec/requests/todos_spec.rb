@@ -45,7 +45,7 @@ RSpec.describe 'Todos API', type: :request do
     end
   end
 
-  decsribe 'POST /todos' do
+  describe 'POST /todos' do
     let(:valid_attributes) { { title: 'Learn Elm', created_by: '1' } }
 
     context 'when the request is valid' do

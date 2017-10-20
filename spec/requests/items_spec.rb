@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe 'Items API' do
   let!(:todo) { create(:todo) }
-  let!(items) { create_list(:item, 20, todo_id: todo.id) }
+  let!(:items) { create_list(:item, 20, todo_id: todo.id) }
   let(:todo_id) { todo.id }
   let(:id) { items.first.id }
 
@@ -34,7 +34,7 @@ RSpec.describe 'Items API' do
   end
 
   describe 'GET /todos/:todo_id/items/:id' do
-    before { get "/todos/#{todo_id}/itesm/#{id}" }
+    before { get "/todos/#{todo_id}/items/#{id}" }
 
     context 'when todo item exists' do
       it 'returns status code 200' do

@@ -7,7 +7,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.create(todo_params)
+    @todo = Todo.create!(todo_params)
     json_response(@todo, :created)
   end
 
@@ -31,6 +31,6 @@ class TodosController < ApplicationController
   end
 
   def set_todo
-    @todo = Todo.find(params[:idea])
+    @todo = Todo.find(params[:id])
   end
 end

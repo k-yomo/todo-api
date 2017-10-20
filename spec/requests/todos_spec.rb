@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Todos API', type: :request do
 
-  let!(:todos) { create_list(:todo, 10)}
+  let!(:todos) { create_list(:todo, 10) }
   let(:todo_id) { todos.first.id }
 
   describe 'GET /todos' do
@@ -23,7 +23,9 @@ RSpec.describe 'Todos API', type: :request do
 
     context 'when the record exists' do
       it 'returns the todo' do
-        expect(json).not_to empty
+        p "*" * 100
+        p json['id']
+        expect(json).not_to be_empty
         expect(json['id']).to eq(todo_id)
       end
 
@@ -68,7 +70,7 @@ RSpec.describe 'Todos API', type: :request do
       end
 
       it 'returns a validation failure message' do
-        expect(response.body).to match(/Validation faild: Created by can't be blank/)
+        expect(response.body).to match(/Validation failed: Created by can't be blank/)
       end
     end
   end
@@ -84,7 +86,7 @@ RSpec.describe 'Todos API', type: :request do
       end
 
       it 'returns status code 204' do
-        expoect(response).to have_http_status(204)
+        expect(response).to have_http_status(204)
       end
     end
   end

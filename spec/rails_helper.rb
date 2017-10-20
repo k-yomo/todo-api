@@ -18,7 +18,7 @@ end
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
-RSpec.configuration do |config|
+RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include RequestSpecHelper, type: :request

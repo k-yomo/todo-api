@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
 
   def create
     @todo.items.create!(item_params)
-    json_response(@todo, :created)
+    json_response(@item, :created)
   end
 
   def update
